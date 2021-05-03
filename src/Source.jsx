@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { resolve } from 'nanoseek'
+import { isValidURL } from 'uhrp-url'
 
 const Source = ({ src, ...props } = {}) => {
   const [correctURL, setCorrectURL] = useState('')
 
   useEffect(() => {
     (async () => {
-      const URLs = await resolve({ URL: src })
-      console.log(URLs)
-      setCorrectURL(URLs[0])
+      if (!isValidURL(src)) {
+        setCorrectURL(src)
+      } else {
+        const URLs = await resolve({ URL: src })
+        setCorrectURL(URLs[0])
+      }
     })()
   }, [src])
 
