@@ -1,0 +1,35 @@
+{
+  "name": "uhrp-react",
+  "version": "0.1.0",
+  "description": "UHRP-enabled React components for images, video and audio",
+  "main": "build/index.js",
+  "repository": "git+https://github.com/p2ppsr/uhrp-react",
+  "author": "Peer-to-Peer Privacy Systems Research LLC",
+  "license": "Open BSV License",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "rollup -c --environment BUILD:production",
+    "dev": "rollup -cw",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "nanoseek": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-jest": "^26.6.1",
+    "jest": "^26.6.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "^3.4.4",
+    "rollup": "^2.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "standard": "^15.0.0"
+  },
+  "peerDependencies": {
+    "react": "*"
+  }
+}
