@@ -10,8 +10,15 @@ const Img = ({ src, ...props } = {}) => {
       if (!isValidURL(src)) {
         setCorrectURL(src)
       } else {
-        const URLs = await resolve({ URL: src })
-        setCorrectURL(URLs[0])
+        let URLs = []
+        do {
+          try {
+            URLs = await resolve({ URL: src })
+            setCorrectURL(URLs[0])
+          } finally {
+            await new Promise(resolve => setTimeout(resolve, 5000))
+          }
+        } while (URLs.length === 0)
       }
     })()
   }, [src])
