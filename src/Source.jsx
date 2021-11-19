@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { resolve } from 'nanoseek'
 import { isValidURL } from 'uhrp-url'
 
-const Source = ({ src, ...props } = {}) => {
+const Source = ({ src, loading, ...props } = {}) => {
   const [correctURL, setCorrectURL] = useState('')
 
   useEffect(() => {
@@ -10,25 +10,24 @@ const Source = ({ src, ...props } = {}) => {
       if (!isValidURL(src)) {
         setCorrectURL(src)
       } else {
-        let URLs = []
-        do {
-          try {
-            URLs = await resolve({ URL: src })
-            setCorrectURL(URLs[0])
-          } finally {
-            await new Promise(resolve => setTimeout(resolve, 5000))
-          }
-        } while (URLs.length === 0)
+        try {
+          const [url] = await resolve({ URL: src })
+          setCorrectURL(url)
+        } catch (e) { /* ignore */ }
       }
     })()
   }, [src])
 
-  return (
-    <source
-      src={correctURL}
-      {...props}
-    />
-  )
+  if (correctURL || !loading) {
+    return (
+      <source
+        src={correctURL}
+        {...props}
+      />
+    )
+  } else {
+    return loading
+  }
 }
 
 export default Source

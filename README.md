@@ -24,9 +24,15 @@ export default () => (
         src='XUSy2EHiJqRxcB3frZbfQ7J1kEe1sE8x2vB6cfUr1A6rry2AeTZX'
       />
     </video>
+    <Img
+      src='uhrp:XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq'
+      loading={<div>...</div>}
+    />
   </div>
 )
 ```
+
+The `loading` prop is shown until the URL is resolved.
 
 You are free to pass any other props to the components, which will be passed to the HTML element.
 
