@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { resolve } from 'nanoseek'
 import { isValidURL } from 'uhrp-url'
 
-const Source = ({ src, loading, ...props } = {}) => {
+const Source = ({ src, loading, bridgeportResolvers, ...props } = {}) => {
   const [correctURL, setCorrectURL] = useState('')
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const Source = ({ src, loading, ...props } = {}) => {
         setCorrectURL(src)
       } else {
         try {
-          const [url] = await resolve({ URL: src })
+          const [url] = await resolve({ bridgeportResolvers, URL: src })
           setCorrectURL(url)
         } catch (e) { /* ignore */ }
       }
