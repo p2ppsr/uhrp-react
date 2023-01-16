@@ -2,6 +2,13 @@
 
 UHRP-enabled React components for images, video and audio
 
+# Background
+
+The Universal Hash Resolution Protocol (UHRP) allows content to be addressed by its SHA256 hash, removing the need for large image and video files to be stored directly on the blockchain. This reduces the cost of storing files 'on' the blockchain by a factor of 100.
+
+Read more here:
+[https://www.projectbabbage.com/docs/nanostore/concepts/uhrp](https://www.projectbabbage.com/docs/nanostore/concepts/uhrp)
+
 ## Installation
 
 ```
