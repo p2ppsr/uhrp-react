@@ -14,8 +14,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "nanoseek": "^0.1.2",
-    "uhrp-url": "^0.1.2"
+    "nanoseek": "^0.1.8",
+    "uhrp-url": "^0.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
