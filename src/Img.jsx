@@ -11,7 +11,7 @@ const Img = ({ src, loading, confederacyHost, ...props } = {}) => {
         setCorrectURL(src)
       } else {
         try {
-          const [url] = await resolve({ confederacyHost, URL: src })
+          const [url] = await resolve({ confederacyHost, UHRPUrl: src })
           setCorrectURL(url)
         } catch (e) { /* ignore */ }
       }
