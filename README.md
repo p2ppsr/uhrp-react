@@ -34,7 +34,7 @@ export default () => (
     <Img
       src='uhrp:XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq'
       loading={<div>...</div>}
-      bridgeportResolvers={['http://localhost:3103']}
+      confederacyHost={'https://staging-confederacy.babbage.systems'}
     />
   </div>
 )
@@ -42,7 +42,7 @@ export default () => (
 
 The `loading` prop is shown until the URL is resolved.
 
-The `bridgeportResolvers` prop is forwarded to `nanoseek`.
+The `confederacyHost` prop is forwarded to `nanoseek`.
 
 You are free to pass any other props to the components, which will be passed to the HTML element.
 
