@@ -1,6 +1,6 @@
 {
   "name": "uhrp-react",
-  "version": "0.1.4",
+  "version": "0.1.9",
   "description": "UHRP-enabled React components for images, video and audio",
   "main": "build/index.js",
   "repository": "git+https://github.com/p2ppsr/uhrp-react",
@@ -14,8 +14,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "nanoseek": "^0.1.2",
-    "uhrp-url": "^0.1.2"
+    "nanoseek": "^0.1.10",
+    "uhrp-url": "^0.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
