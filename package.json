@@ -28,7 +28,7 @@
     "react-scripts": "^3.4.4",
     "rollup": "^2.32.1",
     "rollup-plugin-babel": "^4.4.0",
-    "standard": "^15.0.0"
+    "standard": "^17.1.0"
   },
   "peerDependencies": {
     "react": "*"
