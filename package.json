@@ -1,6 +1,6 @@
 {
   "name": "uhrp-react",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "UHRP-enabled React components for images, video and audio",
   "main": "build/index.js",
   "repository": "git+https://github.com/p2ppsr/uhrp-react",
