@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "nanoseek": "^0.1.10",
+    "nanoseek": "^0.1.13",
     "uhrp-url": "^0.1.4"
   },
   "devDependencies": {
