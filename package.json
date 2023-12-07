@@ -13,10 +13,6 @@
     "dev": "rollup -cw",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "nanoseek": "^0.1.13",
-    "uhrp-url": "^0.1.4"
-  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
@@ -32,5 +28,9 @@
   },
   "peerDependencies": {
     "react": "*"
+  },
+  "dependencies": {
+    "nanoseek": "^0.1.18",
+    "uhrp-url": "^0.1.7"
   }
 }
