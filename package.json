@@ -30,7 +30,7 @@
     "react": "*"
   },
   "dependencies": {
-    "nanoseek": "^0.1.22",
+    "nanoseek": "^0.1.23",
     "uhrp-url": "^0.1.10"
   }
 }
