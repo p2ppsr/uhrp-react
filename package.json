@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "nanoseek": "^0.1.38",
-    "uhrp-url": "^0.1.10"
+    "uhrp-url": "^0.1.10",
+    "zustand": "^4.5.0"
   }
 }
