@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { resolve } from 'nanoseek'
-import { isValidURL } from 'uhrp-url'
+import React, { useEffect } from 'react'
+import useStore from './store'
 
 const Img = ({ src, loading, confederacyHost, ...props } = {}) => {
-  const [correctURL, setCorrectURL] = useState('')
+  const { setCorrectURL } = useStore()
+  const getCorrectURL = useStore(state => state.urls[src] || '')
 
   useEffect(() => {
     (async () => {
-      if (!isValidURL(src)) {
-        setCorrectURL(src)
-      } else {
-        try {
-          const [url] = await resolve({ confederacyHost, UHRPUrl: src })
-          setCorrectURL(url)
-        } catch (e) { /* ignore */ }
-      }
+      await setCorrectURL(src, confederacyHost)
     })()
-  }, [src])
+  }, [src, getCorrectURL, setCorrectURL])
 
-  if (correctURL || !loading) {
+  if (getCorrectURL || !loading) {
     return (
       <img
-        src={correctURL}
+        src={getCorrectURL}
         {...props}
       />
     )
