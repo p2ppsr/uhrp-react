@@ -7,10 +7,8 @@ const useStore = create(persist(
   (set, get) => ({
     urls: {},
     setCorrectURL: async (src, confederacyHost) => {
-      const currentUHRPUrl = get().urls[src]
-
       // Avoid redundant updates
-      if (src === currentUHRPUrl) {
+      if (src in get().urls) {
         return
       }
 
