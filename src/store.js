@@ -18,7 +18,7 @@ const useStore = create(persist(
       } else {
         try {
           const [url] = await resolve({ confederacyHost: confederacyHost, UHRPUrl: src })
-          set(state => ({ urls: { ...state.urls, [src]: url } }))
+          set(state => ({ urls: { ...state.urls || {}, [src]: url } }))
         } catch (e) {
           console.error(e)
         }
