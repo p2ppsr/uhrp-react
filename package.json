@@ -29,7 +29,7 @@
     "react": "*"
   },
   "dependencies": {
-    "nanoseek": "^0.2.20",
+    "nanoseek": "^0.2.21",
     "uhrp-url": "^0.1.10",
     "zustand": "^4.5.0"
   }
