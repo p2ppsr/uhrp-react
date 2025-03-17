@@ -1,6 +1,5 @@
 {
   "name": "uhrp-react-example",
-  "homepage": ".",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -19,8 +18,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "standard": "^14.3.4"
-  }
+  ]
 }
