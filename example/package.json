@@ -3,15 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SKIP_PREFLIGHT_CHECK=true node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
   },
   "dependencies": {
-    "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom",
-    "react-scripts": "file:../node_modules/react-scripts",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "uhrp-react": "file:.."
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.0.4",
+    "react-scripts": "^5.0.1"
   },
   "browserslist": [
     ">0.2%",
