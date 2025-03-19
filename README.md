@@ -1,13 +1,10 @@
 # uhrp-react
 
-UHRP-enabled React components for images, video and audio
+UHRP-enabled React components for images, video, and audio.
 
 # Background
 
-The Universal Hash Resolution Protocol (UHRP) allows content to be addressed by its SHA256 hash, removing the need for large image and video files to be stored directly on the blockchain. This reduces the cost of storing files 'on' the blockchain by a factor of 100.
-
-Read more here:
-[https://www.projectbabbage.com/docs/nanostore/concepts/uhrp](https://www.projectbabbage.com/docs/nanostore/concepts/uhrp)
+The Universal Hash Resolution Protocol (UHRP) allows content to be addressed by its SHA256 hash, enabling efficient content storage and retrieval. This eliminates the need to store large media files directly on the blockchain, significantly reducing costs.
 
 ## Installation
 
@@ -16,38 +13,50 @@ npm i uhrp-react
 ```
 
 ## Usage
+In your React project:
 
-Within a React project:
-
-```js
+```tsx
 import React from 'react'
 import { Img, Source } from 'uhrp-react'
 
-export default () => (
+const App = () => (
   <div>
-    <Img src='uhrp:XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq' />
-    <video controls>
-      <Source
-        src='XUSy2EHiJqRxcB3frZbfQ7J1kEe1sE8x2vB6cfUr1A6rry2AeTZX'
+    <h1>UHRP Media Showcase</h1>
+
+    <div>
+      <h2>Image Preview</h2>
+      <Img src='XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq' />
+    </div>
+
+    <div>
+      <h2>Video Preview</h2>
+      <video controls>
+        <Source src='XUSy2EHiJqRxcB3frZbfQ7J1kEe1sE8x2vB6cfUr1A6rry2AeTZX' />
+      </video>
+    </div>
+
+    <div>
+      <h2>Image with Loading State</h2>
+      <Img
+        src='XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq'
+        loading={<div>Loading...</div>}
       />
-    </video>
-    <Img
-      src='uhrp:XUT4UwibmJijUorRuhdceFhVXvpzZYfusvC6umGFHWrCxsfBK8Eq'
-      loading={<div>...</div>}
-      confederacyHost={'https://staging-confederacy.babbage.systems'}
-    />
+    </div>
   </div>
 )
+
+export default App
 ```
+## Props
 
-The `loading` prop is shown until the URL is resolved.
+src (required) – The UHRP address of the media.
+loading (optional) – A React element to display while the media is being resolved.
+Any additional props will be passed directly to the rendered <img> or <source> element for greater flexibility.
 
-The `confederacyHost` prop is forwarded to `nanoseek`.
+## How It Works
 
-You are free to pass any other props to the components, which will be passed to the HTML element.
-
-The library simply resolves the UHRP URL and replaces it with the HTTP URL when creating the HTML elements.
+The uhrp-react library automatically resolves UHRP URLs to HTTP URLs using the UHRP Storage Server in the background. This provides seamless integration with your React application.
 
 ## License
-
 The license for the code in this repository is the Open BSV License.
+
