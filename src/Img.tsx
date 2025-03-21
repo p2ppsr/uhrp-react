@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useStore } from './store'
 
 /**
@@ -19,8 +19,7 @@ type ImgProps = {
  * @param {ImgProps} props - The component's properties
  * @returns {JSX.Element} - The resolved image element or fallback content
  */
-
-const Img: FC<ImgProps> = ({ src, fallback, ...props }) => {
+const Img = ({ src, fallback, ...props }: ImgProps): JSX.Element | null => {
   const resolvedUrl = useStore(state => state.urls[src] || '')
   const setResolvedURL = useStore(state => state.setResolvedURL)
 
